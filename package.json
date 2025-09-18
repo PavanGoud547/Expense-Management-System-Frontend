@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://exms-backend.up.railway.app"
+  "proxy": "http://localhost:8081"
 }

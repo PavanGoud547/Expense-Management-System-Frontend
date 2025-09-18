@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const instance = axios.create({
-  baseURL: 'https://exms-backend.up.railway.app', // Backend URL
+  baseURL: 'http://localhost:8081', // Use relative URLs for proxy in development
 });
 
 // Request interceptor to add token to headers
