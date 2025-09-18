@@ -9,9 +9,11 @@ const AdminDashboard = () => {
   const [success, setSuccess] = useState(null);
   const [filter, setFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
     fetchAllExpenses();
+    setFadeIn(true);
   }, []);
 
   const fetchAllExpenses = async () => {
@@ -126,20 +128,20 @@ const AdminDashboard = () => {
 
       {/* All Expenses Table */}
       <div className="bg-white rounded-xl shadow-lg p-6">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-gray-900">All Expenses</h2>
-          <div className="flex items-center space-x-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 space-y-4 md:space-y-0 md:space-x-4">
+          <h2 className="text-xl font-bold text-gray-900 transition-shadow duration-300 hover:shadow-lg rounded-md p-2">All Expenses</h2>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
             <input
               type="text"
               placeholder="Search expenses..."
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full sm:w-auto transition-shadow duration-300 hover:shadow-md"
             />
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full sm:w-auto transition-shadow duration-300 hover:shadow-md"
             >
               <option value="">All Status</option>
               <option value="PENDING">Pending</option>
