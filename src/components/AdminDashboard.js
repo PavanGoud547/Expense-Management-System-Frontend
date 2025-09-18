@@ -192,7 +192,7 @@ const AdminDashboard = () => {
                   <td className="py-4 px-4">
                     {expense.proofImagePath ? (
                       <button
-                        onClick={() => window.open(`http://localhost:8081/expenses/files/${expense.proofImagePath}`, '_blank')}
+                        onClick={() => window.open(`${process.env.REACT_APP_API_BASE_URL || 'http://localhost:8081'}/expenses/files/${expense.proofImagePath}`, '_blank')}
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium hover:bg-gray-200 transition"
                       >
                         View Receipt
