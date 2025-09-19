@@ -2,9 +2,9 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:8081',
+  baseURL:'http://localhost:8081',
 });
-
+// process.env.REACT_APP_API_BASE_URL
 // Request interceptor to add token to headers
 instance.interceptors.request.use(
   (config) => {
